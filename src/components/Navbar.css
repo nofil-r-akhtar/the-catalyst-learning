@@ -1,0 +1,130 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  background-color: white;
+  position: sticky; /* 👈 sticky */
+  top: 0;           /* 👈 sticks to the top */
+  z-index: 999;     /* 👈 stays above all */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Optional: soft shadow */
+   transition: transform 0.3s ease-in-out;
+}
+
+.navbar--hidden {
+  transform: translateY(-100%);
+}
+
+
+.navbar__logo {
+  flex-shrink: 0;
+  margin-right: 40px;
+}
+
+.navbar__logo img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar__links {
+  list-style: none;
+  display: flex;
+  gap: 5vw;
+  margin: 0 auto; /* centers the nav links */
+  padding: 0;
+  font-weight: 500;
+}
+
+.navbar__links li {
+  cursor: pointer;
+  color: #00478C;
+  transition: color 0.3s;
+}
+
+.navbar__links li:hover {
+  color: #00478C;
+}
+
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.navbar__hamburger .bar {
+  width: 24px;
+  height: 3px;
+  background-color: #00478C;
+  transition: 0.3s ease;
+}
+
+.bar.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.bar.open:nth-child(2) {
+  opacity: 0;
+}
+.bar.open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.navbar__mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%; /* ← changed from right */
+  width: 250px;
+  height: 100vh;
+  background-color: #ffffff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* ← changed shadow direction */
+  display: flex;
+  flex-direction: column;
+  padding: 80px 20px;
+  transition: left 0.3s ease; /* ← changed from right */
+  z-index: 1000;
+}
+
+.navbar__mobile-menu.show {
+  left: 0; /* ← changed from right */
+}
+
+
+.navbar__mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar__mobile-menu li {
+  padding: 16px 0;
+  border-bottom: 1px solid #ddd;
+  color: #002c7a;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.navbar__close-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px; /* ← changed from right to left */
+  font-size: 2rem;
+  color: #002c7a; /* same as your theme */
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__hamburger {
+    display: flex;
+  }
+
+  .navbar {
+    justify-content: space-between;
+  }
+}

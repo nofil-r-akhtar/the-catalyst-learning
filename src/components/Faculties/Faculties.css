@@ -1,0 +1,52 @@
+.faculties {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f4f9ff;
+}
+
+.faculties h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #00478C;
+}
+
+.faculties__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.faculty__card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Keeps image square */
+  object-fit: cover;
+  max-width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.faculty__card:hover {
+  transform: translateY(-5px);
+}
+
+.faculty__card img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Keeps image square */
+  object-fit: cover;   /* Ensures image fills area without distortion */
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.faculty__card h3 {
+  margin: 0.5rem 0 0.25rem;
+  color: #00478C;
+}
+
+.faculty__card p {
+  color: #666;
+  font-size: 0.95rem;
+}

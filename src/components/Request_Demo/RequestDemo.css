@@ -1,0 +1,23 @@
+.request-demo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  background-color: #f4f9ff;
+}
+
+.demo-button {
+  padding: 1rem 8rem;
+  font-size: 1.1rem;
+  background-color: transparent;
+  color: #00478C;
+  border: 2px solid #00478C;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.demo-button:hover {
+  background-color: #00478C;
+  color: white;
+}
