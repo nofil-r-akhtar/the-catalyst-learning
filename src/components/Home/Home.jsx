@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
 const images = [
-  // "https://images.unsplash.com/photo-1573497019405-b72b9e7c4e7d?auto=format&fit=crop&w=1600&q=80",
-  // "https://images.unsplash.com/photo-1584697964389-f1e971d8e52d?auto=format&fit=crop&w=1600&q=80",
+  "https://plus.unsplash.com/premium_photo-1705882846961-c6b31413927a?q=80&w=1134&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1719159381916-062fa9f435a6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=1600&q=80",
 ];
 
