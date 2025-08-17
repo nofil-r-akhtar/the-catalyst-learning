@@ -10,13 +10,10 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Hide navbar on any scroll
       setHideNavbar(true);
 
-      // Reset any previous timeout
       if (scrollTimeout) clearTimeout(scrollTimeout);
 
-      // Show navbar after 250ms of no scroll
       const timeout = setTimeout(() => {
         setHideNavbar(false);
       }, 250);
@@ -33,6 +30,12 @@ function Navbar() {
 
   return (
     <nav className={`navbar ${hideNavbar ? 'navbar--hidden' : ''}`}>
+      {/* Left Side - Logo */}
+      <div className="navbar__logo">
+        <img src="/header_logo.png" alt="Logo" />
+      </div>
+
+      {/* Right Side - Links */}
       <ul className="navbar__links">
         <li onClick={() => document.getElementById('home').scrollIntoView({ behavior: 'smooth' })}>Home</li>
         <li onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}>About Us</li>
@@ -41,12 +44,14 @@ function Navbar() {
         <li onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>Contact Us</li>
       </ul>
 
+      {/* Mobile Hamburger */}
       <div className="navbar__hamburger" onClick={toggleMenu}>
         <div className={`bar ${isOpen ? 'open' : ''}`}></div>
         <div className={`bar ${isOpen ? 'open' : ''}`}></div>
         <div className={`bar ${isOpen ? 'open' : ''}`}></div>
       </div>
 
+      {/* Mobile Menu */}
       <div className={`navbar__mobile-menu ${isOpen ? 'show' : ''}`}>
         <div className="navbar__close-icon" onClick={toggleMenu}>×</div>
         <ul>

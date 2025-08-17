@@ -1,0 +1,12 @@
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;       /* size of circle */
+  height: 30px;
+  border: 2px solid #00478C; /* circle color */
+  border-radius: 50%;
+  pointer-events: none; /* cursor doesn’t block clicks */
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
