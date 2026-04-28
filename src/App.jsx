@@ -1,27 +1,29 @@
-import Navbar from './components/Navbar';
-import Home from './components/Home/Home';
-import AboutUs from './components/AboutUs/AboutUs';
-import Faculties from './components/Faculties/Faculties';
-import RequestDemo from './components/Request_Demo/RequestDemo';
-import ContactUs from './components/Contact_us/ContactUs';
-import CustomCursor from './components/CustomCursor/CustomCursor';
+import Navbar from './components/Navbar/Navbar';
+import Hero from './components/Hero/Hero';
+import WhyCatalyst from './components/WhyCatalyst/WhyCatalyst';
+import Programs from './components/Programs/Programs';
+import Faculty from './components/Faculty/Faculty';
+import Testimonials from './components/Testimonials/Testimonials';
+import Process from './components/Process/Process';
+import CtaDemo from './components/CtaDemo/CtaDemo';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
 
-
-
-function App() {
+export default function App() {
   return (
-    
-    <div style={{ backgroundColor: '#fff' }}>
-      <CustomCursor />
+    <>
       <Navbar />
-      <div id="home"><Home /></div>
-      <div id="about"><AboutUs /></div>
-      <div id="faculties"><Faculties /></div>
-      <div id="demo"><RequestDemo/></div>
-      <div id="contact"><ContactUs/></div>
-    </div>
+      <main>
+        <Hero />
+        <WhyCatalyst />
+        <Programs />
+        <Faculty />
+        <Testimonials />
+        <Process />
+        <CtaDemo />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
-
-
-export default App;

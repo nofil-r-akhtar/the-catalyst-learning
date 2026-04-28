@@ -1,74 +1,53 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* Tailwind v4 theme tokens — exposed as utility classes */
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  --color-ink-50: #f8fafc;
+  --color-ink-100: #f1f5f9;
+  --color-ink-700: #334155;
+  --color-ink-900: #0f172a;
+  --color-ink-950: #0a0e1a;
+
+  --color-amber-brand: #f5b14c;
+  --color-blue-brand: #2563eb;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Manrope", system-ui, sans-serif;
+  background-color: #ffffff;
+  color: #0a0e1a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  scroll-behavior: smooth;
+h1, h2, h3, h4 {
+  font-family: "Fraunces", Georgia, serif;
+  letter-spacing: -0.025em;
 }
 
-a {
-  font-weight: 500;
-  color: #002c7a;
-  text-decoration: inherit;
+/* Shared animations used by Hero (and reusable elsewhere) */
+@keyframes catalyst-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-a:hover {
-  color: #002c7a;
-}
-
-body {
-  cursor: none;
-  margin: 0;
-  padding: 0;
-  background-color: #1e3a8a; /* Tailwind-style blue-900 */
-  color: white;
-  font-family: sans-serif;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+@keyframes catalyst-blob-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(20px, -30px) scale(1.05); }
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+.catalyst-anim-1 { animation: catalyst-fade-up 0.8s ease-out 0.1s both; }
+.catalyst-anim-2 { animation: catalyst-fade-up 0.8s ease-out 0.25s both; }
+.catalyst-anim-3 { animation: catalyst-fade-up 0.8s ease-out 0.4s both; }
+.catalyst-anim-4 { animation: catalyst-fade-up 0.8s ease-out 0.55s both; }
+.catalyst-anim-5 { animation: catalyst-fade-up 0.9s ease-out 0.75s both; }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #002c7a;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+.catalyst-blob   { animation: catalyst-blob-drift 18s ease-in-out infinite; }
+.catalyst-blob-2 { animation: catalyst-blob-drift 22s ease-in-out infinite reverse; }
